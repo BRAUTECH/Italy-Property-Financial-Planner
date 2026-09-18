@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fabio & Andrea — Italy Property Finance Planner</title>
+<style>
+:root{--bg:#f4f7fb;--card:#fff;--ink:#172033;--muted:#687386;--line:#dce3ee;--good:#147a52;--warn:#a96300;--bad:#b42318;--accent:#2457d6}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+.wrap{max-width:1180px;margin:28px auto;padding:0 18px 60px}.hero{background:linear-gradient(135deg,#172033,#2f5fd0);color:#fff;border-radius:18px;padding:26px}
+.hero h1{margin:0 0 6px;font-size:28px}.hero p{margin:0;opacity:.88}.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;margin-top:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:0 4px 16px rgba(30,50,80,.05)}
+.span4{grid-column:span 4}.span5{grid-column:span 5}.span6{grid-column:span 6}.span7{grid-column:span 7}.span12{grid-column:span 12}
+h2{font-size:18px;margin:0 0 14px} h3{font-size:15px;margin:16px 0 8px}
+label{display:block;font-size:12px;color:var(--muted);margin:10px 0 5px}
+input,select{width:100%;padding:10px 11px;border:1px solid #cbd5e1;border-radius:9px;background:#fff;font-size:14px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.kpi{font-size:26px;font-weight:750}.sub{font-size:12px;color:var(--muted);margin-top:3px}
+.good{color:var(--good)}.warn{color:var(--warn)}.bad{color:var(--bad)}
+table{width:100%;border-collapse:collapse;font-size:13px} th,td{padding:9px;border-bottom:1px solid var(--line);text-align:right} th:first-child,td:first-child{text-align:left}
+.total td{font-weight:750;border-top:2px solid #aeb8c7}.pill{display:inline-block;padding:5px 9px;border-radius:999px;font-size:12px;font-weight:700;background:#eef2ff}
+.note{font-size:12px;color:var(--muted);line-height:1.5}.alert{padding:11px;border-radius:10px;background:#fff7e6;border:1px solid #f1d49b;font-size:13px}
+.checks{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.check{padding:10px;border:1px solid var(--line);border-radius:10px;font-size:13px}
+button{border:0;border-radius:9px;padding:10px 13px;font-weight:700;cursor:pointer;background:#e8edf7;color:#172033} button.primary{background:var(--accent);color:#fff}
+footer{margin-top:18px;font-size:11px;color:var(--muted);line-height:1.5}
+@media(max-width:800px){.span4,.span5,.span6,.span7,.span12{grid-column:span 12}.row,.checks{grid-template-columns:1fr}}
+@media print{body{background:#fff}.card,.hero{box-shadow:none}.no-print{display:none}.wrap{margin:0;max-width:none}}
+
+:root{--bg:#f3f3ee;--ink:#203b35;--muted:#586963;--accent:#24594b;--line:#d9e1d9;--good:#216348;--warn:#8c5700;--bad:#ad3028}
+body{line-height:1.5}.wrap{max-width:1240px;margin:32px auto;padding:0 20px 60px}.hero{background:#203f37;border-radius:20px;padding:36px}.hero h1{font-size:clamp(28px,4vw,44px);letter-spacing:-1.3px;font-weight:650}.eyebrow{font-size:12px;letter-spacing:2px;color:#c9dcc3;margin-bottom:18px}.intro{max-width:750px;font-size:18px;color:var(--muted);margin:24px 0}nav{display:flex;gap:12px;flex-wrap:wrap}nav a{padding:12px 16px;background:white;border-radius:8px;color:var(--accent);font-weight:600;text-decoration:none;min-height:44px}a{color:var(--accent)}.section-title{margin-top:32px;font-size:22px}.section-title h2{font-size:22px;margin-bottom:4px}.card{padding:22px;border-radius:16px;box-shadow:none;min-width:0}.card h2{font-size:18px}.field-label{display:flex;align-items:center;gap:6px;margin-top:12px}.field-label label{margin:0;flex:1;font-size:14px;color:var(--ink);font-weight:550}.info{flex-shrink:0;width:44px;height:44px;padding:0;font-size:21px;background:transparent;color:var(--accent);border:1px solid var(--line);border-radius:50%}input,select{min-height:48px;font-size:16px;color:var(--ink);max-width:100%}input:disabled{background:#edf0eb;color:#66756d}input[aria-invalid=true]{border:2px solid var(--bad)}button{min-height:44px;font-size:14px}button:hover{filter:brightness(.94)}:focus-visible{outline:3px solid #b56d15;outline-offset:3px}.note,.sub{font-size:14px}.kpi{font-size:clamp(24px,3vw,32px);letter-spacing:-.8px;overflow-wrap:anywhere}.row{gap:14px}.alert{font-size:14px;line-height:1.6}.rate-card{background:#edf3e9;border-radius:12px;padding:18px;margin-top:18px;display:grid;gap:5px}.rate-card strong{font-size:32px}.rate-card small{font-size:13px}td,th{padding:12px 4px;font-size:14px}td:last-child{white-space:nowrap;font-weight:600}.checks{grid-template-columns:1fr}.check{display:flex;padding:4px;align-items:center;gap:4px}.check label{display:flex;align-items:center;gap:10px;min-height:48px;margin:0;padding:8px;flex:1;color:var(--ink);font-size:14px;cursor:pointer}.check input{width:22px;height:22px;min-height:22px;flex-shrink:0;accent-color:var(--accent)}.no-print button{margin:6px 4px 6px 0}footer{font-size:13px}dialog{border:1px solid var(--line);border-radius:18px;padding:26px;max-width:520px;width:calc(100% - 32px);color:var(--ink);box-shadow:0 24px 80px #0003}dialog::backdrop{background:#132d29aa}dialog p{line-height:1.7}dialog button{background:var(--accent);color:white;width:100%}.skip{position:absolute;left:-10000px}.skip:focus{left:16px;top:8px;background:white;padding:12px;z-index:2}#validation:not(:empty){padding:14px;background:#fff1d9;margin-top:16px;border-radius:10px}#assumptions,#results,#research{scroll-margin-top:16px}
+@media(max-width:1050px){.span4{grid-column:span 6}.span5,.span7{grid-column:span 12}}
+@media(max-width:700px){.wrap{margin:12px auto;padding:0 12px 32px}.hero{padding:24px 20px}.card{padding:18px}.span4,.span5,.span6,.span7{grid-column:span 12}.row{grid-template-columns:1fr}.grid{gap:12px}.hero h1{letter-spacing:-.7px}td{font-size:14px}td:first-child{padding-right:12px}.section-title{margin-top:22px}nav{gap:8px}nav a{font-size:14px}.kpi{font-size:30px}}
+@media print{.no-print,.info,.skip,dialog,#validation{display:none!important}.wrap{padding:0}.hero{background:white;color:#203b35;border:1px solid #ccc;padding:16px}.eyebrow{color:#203b35}.grid{display:block}.card{break-inside:avoid;margin:10px 0;padding:12px}.field-label{margin-top:5px}input,select{min-height:28px;padding:3px;border:0}.row{grid-template-columns:1fr 1fr}.check input{appearance:auto}.checks{grid-template-columns:1fr 1fr}.section-title{break-after:avoid}body{font-size:11px}.note,.sub,td,th,.field-label label{font-size:11px}}
+</style>
+</head>
+<body>
+<a class="skip" href="#assumptions">Skip to assumptions</a>
+<main class="wrap" id="main">
+<section class="hero">
+<div class="eyebrow">FABIO &amp; ANDREA · HOME SEARCH</div><h1>Italy Property Finance Planner</h1>
+<p>Mestre → Treviso · Explore the property. Understand the cash commitment.</p>
+</section>
+
+<p class="intro">A clearer view of your next home. Change the assumptions below to compare financing, buying costs and the cash you would have left.</p><nav class="no-print"><a href="#assumptions">Edit assumptions ↓</a><a href="#results">See results ↓</a><a href="#research">Research checklist ↓</a></nav><h2 class="section-title" id="assumptions">01 / Your assumptions</h2><p class="note">Illustrative estimates, not an offer. Confirm tax eligibility with your notary and final mortgage terms with ING / Nicoleta.</p><div id="validation" role="status" aria-live="polite"></div><div class="grid">
+<section class="card span4">
+<h2>1. Property & bank assumptions</h2>
+<div class="field-label"><label for="price">Advertised / agreed purchase price (€)</label><button type="button" class="info" aria-label="Explain Advertised / agreed purchase price (€)" aria-haspopup="dialog" aria-controls="helpDialog" data-help="price">ⓘ</button></div><input id="price" type="number" value="165000" step="1000">
+<div class="field-label"><label for="valuation">ING valuation (€)</label><button type="button" class="info" aria-label="Explain ING valuation (€)" aria-haspopup="dialog" aria-controls="helpDialog" data-help="valuation">ⓘ</button></div><input id="valuation" type="number" value="165000" step="1000">
+<div class="row">
+<div><div class="field-label"><label for="ltv">Financing % (LTV)</label><button type="button" class="info" aria-label="Explain Financing % (LTV)" aria-haspopup="dialog" aria-controls="helpDialog" data-help="ltv">ⓘ</button></div><input id="ltv" type="number" value="94" min="0" max="95" step=".1"></div>
+<div><div class="field-label"><label for="years">Mortgage term (years)</label><button type="button" class="info" aria-label="Explain Mortgage term (years)" aria-haspopup="dialog" aria-controls="helpDialog" data-help="years">ⓘ</button></div><input id="years" type="number" value="25" min="10" max="30"></div>
+</div>
+<div class="field-label"><label for="rate">Standard annual rate / TAN (%)</label><button type="button" class="info" aria-label="Explain Standard annual rate / TAN (%)" aria-haspopup="dialog" aria-controls="helpDialog" data-help="rate">ⓘ</button></div><input id="rate" type="number" value="3.50" step=".05">
+<div class="field-label"><label for="approval">ING income pre-approval ceiling (€)</label><button type="button" class="info" aria-label="Explain ING income pre-approval ceiling (€)" aria-haspopup="dialog" aria-controls="helpDialog" data-help="approval">ⓘ</button></div><input id="approval" type="number" value="170000" step="1000">
+<div class="field-label"><label for="cash">Cash available in Italy (€)</label><button type="button" class="info" aria-label="Explain Cash available in Italy (€)" aria-haspopup="dialog" aria-controls="helpDialog" data-help="cash">ⓘ</button></div><input id="cash" type="number" value="37000" step="500">
+</section>
+
+<section class="card span4">
+<h2>2. Purchase/tax assumptions</h2>
+<div class="field-label"><label for="seller">Seller type</label><button type="button" class="info" aria-label="Explain Seller type" aria-haspopup="dialog" aria-controls="helpDialog" data-help="seller">ⓘ</button></div><select id="seller"><option value="private">Private / VAT-exempt company</option><option value="vat">Company sale subject to VAT</option></select>
+<div class="field-label"><label for="prima">Prima casa?</label><button type="button" class="info" aria-label="Explain Prima casa?" aria-haspopup="dialog" aria-controls="helpDialog" data-help="prima">ⓘ</button></div><select id="prima"><option value="yes">Yes</option><option value="no">No</option></select>
+<div class="field-label"><label for="rendita">Rendita catastale (€) — enter from listing/docs</label><button type="button" class="info" aria-label="Explain Rendita catastale (€) — enter from listing/docs" aria-haspopup="dialog" aria-controls="helpDialog" data-help="rendita">ⓘ</button></div><input id="rendita" type="number" value="700" step="10">
+<div class="field-label"><label for="agency">Agency commission (%) before 22% VAT</label><button type="button" class="info" aria-label="Explain Agency commission (%) before 22% VAT" aria-haspopup="dialog" aria-controls="helpDialog" data-help="agency">ⓘ</button></div><input id="agency" type="number" value="3" step=".25">
+<div class="row">
+<div><div class="field-label"><label for="notary">Notary estimate (€)</label><button type="button" class="info" aria-label="Explain Notary estimate (€)" aria-haspopup="dialog" aria-controls="helpDialog" data-help="notary">ⓘ</button></div><input id="notary" type="number" value="2500" step="100"></div>
+<div><div class="field-label"><label for="technical">Technical/geometra (€)</label><button type="button" class="info" aria-label="Explain Technical/geometra (€)" aria-haspopup="dialog" aria-controls="helpDialog" data-help="technical">ⓘ</button></div><input id="technical" type="number" value="800" step="100"></div>
+</div>
+<div class="field-label"><label for="other">Other / moving / document reserve (€)</label><button type="button" class="info" aria-label="Explain Other / moving / document reserve (€)" aria-haspopup="dialog" aria-controls="helpDialog" data-help="other">ⓘ</button></div><input id="other" type="number" value="1000" step="100">
+</section>
+
+<section class="card span4">
+<h2>3. ING & energy</h2>
+<div class="field-label"><label for="energy">Is the energy class B or better?</label><button type="button" class="info" aria-label="Explain Is the energy class B or better?" aria-haspopup="dialog" aria-controls="helpDialog" data-help="energy">ⓘ</button></div><select id="energy"><option value="yes">Yes — B, A or better</option><option value="no">No — C to G / unknown</option></select>
+<div class="field-label"><label for="discount">Energy discount (percentage points)</label><button type="button" class="info" aria-label="Explain Energy discount (percentage points)" aria-haspopup="dialog" aria-controls="helpDialog" data-help="discount">ⓘ</button></div><input id="discount" type="number" value="0.20" step=".01">
+<div class="rate-card"><span>Effective annual TAN</span><strong id="effectiveRate">—</strong><small>Standard TAN minus eligible energy discount</small></div>
+<div class="field-label"><label for="processing">ING processing / istruttoria (€)</label><button type="button" class="info" aria-label="Explain ING processing / istruttoria (€)" aria-haspopup="dialog" aria-controls="helpDialog" data-help="processing">ⓘ</button></div><input id="processing" type="number" value="950" step="50">
+<div class="field-label"><label for="perizia">ING valuation/perizia (€ if not waived)</label><button type="button" class="info" aria-label="Explain ING valuation/perizia (€ if not waived)" aria-haspopup="dialog" aria-controls="helpDialog" data-help="perizia">ⓘ</button></div><input id="perizia" type="number" value="300" step="50">
+<div class="field-label"><label for="subtax">Prima-casa substitute tax on mortgage (%)</label><button type="button" class="info" aria-label="Explain Prima-casa substitute tax on mortgage (%)" aria-haspopup="dialog" aria-controls="helpDialog" data-help="subtax">ⓘ</button></div><input id="subtax" type="number" value="0.25" step=".05">
+<div id="energyInfo" class="alert" style="margin-top:12px"></div>
+<p class="note">Qualifying energy assumes a waived perizia and applies your discount automatically. Verify APE and offer conditions with ING. Enter a standard TAN before this energy discount to avoid applying it twice.</p>
+</section>
+
+<div class="span12 section-title" id="results"><h2>02 / Your estimated results</h2><p class="note">Updated as you edit. Cash amounts are rounded for display; calculations retain precision.</p></div><section class="card span4 summary"><div class="sub">Estimated cash required</div><div class="kpi" id="summaryTotal">—</div><div class="sub">Equity + acquisition costs</div></section><section class="card span4 summary"><div class="sub">Cash remaining / shortfall</div><div class="kpi" id="summaryRemain">—</div><div class="sub">After the entered reserve</div></section><section class="card span4 summary"><div class="sub">Estimated monthly mortgage</div><div class="kpi" id="summaryMonthly">—</div><div class="sub">Effective TAN · excludes insurance</div></section><section class="card span5">
+<h2>Bank valuation scenario</h2>
+<div class="row">
+<div><div class="sub">Bank-financeable base</div><div class="kpi" id="base">—</div><div class="sub">lower of purchase price and valuation</div></div>
+<div><div class="sub">Estimated mortgage</div><div class="kpi" id="mortgage">—</div><div class="sub">subject to ING approval ceiling</div></div>
+</div>
+<h3>Valuation gap</h3>
+<table>
+<tr><td>Purchase price</td><td id="tPrice">—</td></tr>
+<tr><td>ING valuation</td><td id="tVal">—</td></tr>
+<tr><td>Price above valuation</td><td id="gap">—</td></tr>
+<tr><td>Buyer equity toward price</td><td id="equity">—</td></tr>
+</table>
+<div id="valuationMessage" class="alert" style="margin-top:12px"></div>
+</section>
+
+<section class="card span7">
+<h2>Estimated acquisition cash requirement</h2>
+<table>
+<thead><tr><th>Component</th><th>Estimate</th></tr></thead>
+<tbody>
+<tr><td>Cash/equity toward purchase price</td><td id="cEquity">—</td></tr>
+<tr><td>Purchase taxes</td><td id="cTax">—</td></tr>
+<tr><td>Agency commission + 22% VAT</td><td id="cAgency">—</td></tr>
+<tr><td>Notary estimate</td><td id="cNotary">—</td></tr>
+<tr><td>Technical/geometra</td><td id="cTech">—</td></tr>
+<tr><td>ING processing</td><td id="cProc">—</td></tr>
+<tr><td>ING valuation/perizia</td><td id="cPerizia">—</td></tr>
+<tr><td>Mortgage substitute tax</td><td id="cSub">—</td></tr>
+<tr><td>Other reserve</td><td id="cOther">—</td></tr>
+<tr class="total"><td>Total estimated cash required</td><td id="cTotal">—</td></tr>
+<tr><td>Cash available</td><td id="cAvail">—</td></tr>
+<tr class="total"><td>Cash remaining / shortfall</td><td id="cRemain">—</td></tr>
+</tbody></table>
+</section>
+
+<section class="card span4">
+<h2>Mortgage snapshot</h2>
+<div class="sub">Illustrative monthly payment</div><div class="kpi" id="monthly">—</div>
+<div class="sub">using the effective TAN and term; excludes future rate changes and insurance/other costs</div>
+<h3>Useful ratios</h3>
+<table>
+<tr><td>Effective LTV vs purchase price</td><td id="effLtv">—</td></tr>
+<tr><td>Cash required / price</td><td id="cashRatio">—</td></tr>
+<tr><td>Total acquisition cost incl. price</td><td id="allIn">—</td></tr>
+</table>
+</section>
+
+<section class="card span4">
+<h2 id="research">Research filter before a visit</h2><p class="note">Tick when verified. Your entries and checklist last until you reload or reset. Print to keep a record.</p>
+<div class="checks">
+<div class="check"><label for="check0"><input type="checkbox" id="check0"> <span>APE energy class stated and document available</span></label><button type="button" class="info" aria-label="Explain checklist item 1" aria-haspopup="dialog" aria-controls="helpDialog" data-help="check0">ⓘ</button></div>
+<div class="check"><label for="check1"><input type="checkbox" id="check1"> <span>Rendita catastale obtained</span></label><button type="button" class="info" aria-label="Explain checklist item 2" aria-haspopup="dialog" aria-controls="helpDialog" data-help="check1">ⓘ</button></div>
+<div class="check"><label for="check2"><input type="checkbox" id="check2"> <span>Exact m² and €/m² reasonable for micro-area</span></label><button type="button" class="info" aria-label="Explain checklist item 3" aria-haspopup="dialog" aria-controls="helpDialog" data-help="check2">ⓘ</button></div>
+<div class="check"><label for="check3"><input type="checkbox" id="check3"> <span>Condominium annual fees stated</span></label><button type="button" class="info" aria-label="Explain checklist item 4" aria-haspopup="dialog" aria-controls="helpDialog" data-help="check3">ⓘ</button></div>
+<div class="check"><label for="check4"><input type="checkbox" id="check4"> <span>Extraordinary works / debts checked</span></label><button type="button" class="info" aria-label="Explain checklist item 5" aria-haspopup="dialog" aria-controls="helpDialog" data-help="check4">ⓘ</button></div>
+<div class="check"><label for="check5"><input type="checkbox" id="check5"> <span>Urban + cadastral conformity confirmed</span></label><button type="button" class="info" aria-label="Explain checklist item 6" aria-haspopup="dialog" aria-controls="helpDialog" data-help="check5">ⓘ</button></div>
+<div class="check"><label for="check6"><input type="checkbox" id="check6"> <span>Lift / floor / garage / parking clear</span></label><button type="button" class="info" aria-label="Explain checklist item 7" aria-haspopup="dialog" aria-controls="helpDialog" data-help="check6">ⓘ</button></div>
+<div class="check"><label for="check7"><input type="checkbox" id="check7"> <span>Heating type + windows + roof/humidity checked</span></label><button type="button" class="info" aria-label="Explain checklist item 8" aria-haspopup="dialog" aria-controls="helpDialog" data-help="check7">ⓘ</button></div>
+<div class="check"><label for="check8"><input type="checkbox" id="check8"> <span>Property vacant/available at rogito</span></label><button type="button" class="info" aria-label="Explain checklist item 9" aria-haspopup="dialog" aria-controls="helpDialog" data-help="check8">ⓘ</button></div>
+<div class="check"><label for="check9"><input type="checkbox" id="check9"> <span>No auction / nuda proprietà / usufruct surprise</span></label><button type="button" class="info" aria-label="Explain checklist item 10" aria-haspopup="dialog" aria-controls="helpDialog" data-help="check9">ⓘ</button></div>
+</div>
+</section>
+
+<section class="card span4">
+<h2>Decision signal</h2>
+<div id="signal" class="kpi">—</div>
+<p id="signalText" class="note"></p>
+<h3>Before making an offer</h3>
+<p class="note">Have the broker sanity-check mortgage compatibility, but remember the bank's own valuation controls the financeable base. Ask the agent for APE, planimetria, rendita catastale, condominium statement/minutes and known extraordinary works before committing. Use a properly drafted mortgage/finance condition in the proposal if advised by your notary/broker.</p>
+<div class="no-print"><button onclick="resetDefaults()">Reset example</button> <button class="primary" onclick="window.print()">Print / Save PDF</button></div>
+</section>
+
+<section class="card span12">
+<h2>How the model calculates</h2>
+<p class="note"><b>Mortgage:</b> LTV × the lower of agreed price and ING valuation, capped by the editable ING pre-approval ceiling. The model retains the original 95% input ceiling for comparison; this is not confirmation of an available LTV for your transaction. Confirm applicable limits and approval with ING.</p>
+<p class="note"><b>Private seller + prima casa:</b> price-value model uses rendita catastale × 1.05 × 110, with 2% registration tax (minimum €1,000) plus €50 mortgage tax + €50 cadastral tax. <b>VAT-subject company + prima casa:</b> 4% VAT on purchase price + €200 + €200 + €200 fixed taxes. Non-prima-casa comparison: private/prezzo-valore uses ×120 and 9% (minimum €1,000) + €100; VAT uses 10% + €600; mortgage substitute tax is 2%. This simplified model excludes luxury-category VAT, special exemptions and transactions ineligible for prezzo-valore. Have the notary verify applicability. Notary/technical entries should include VAT and expenses but exclude taxes already listed, to avoid double counting.</p>
+<p class="note"><b>Important:</b> This is a planning tool, not a bank offer, tax opinion, valuation or notarial quote. Agency/notary/technical fees are editable estimates. Confirm the actual transaction structure, prima-casa eligibility, marital-property treatment, taxes and mortgage conditions with your broker, ING and notary before signing a proposta or preliminare.</p>
+</section>
+</div>
+<footer>Prepared as a research/planning model for Fabio & Andrea. Default scenario: €165k purchase, €165k valuation, 94% LTV, prima casa, private seller, energy B or better. Values can be edited live.<br>References: <a href="https://www1.agenziaentrate.gov.it/web_app_entrate/guida_acquisto_casa.html">Agenzia delle Entrate purchase guide</a> · <a href="https://www.ing.it/faq/mutuo/ing-offre-un-mutuo-green.html">ING energy benefit conditions</a> · Model upgraded 18 September 2026. No inputs are sent to a server.</footer>
+</main>
+<dialog id="helpDialog" aria-labelledby="helpTitle" aria-describedby="helpText"><h2 id="helpTitle"></h2><p id="helpText"></p><button id="closeHelp" type="button" autofocus>Close explanation</button></dialog>
+<noscript><p>This planner needs JavaScript enabled to calculate results.</p></noscript>
+<script>
+const $=id=>document.getElementById(id), eur=n=>new Intl.NumberFormat('en-IE',{style:'currency',currency:'EUR',minimumFractionDigits:0,maximumFractionDigits:0}).format(n||0);
+function val(id){const x=$(id), n=Number(x.value);return Math.min(Number(x.max),Math.max(Number(x.min),Number.isFinite(n)&&x.value.trim()!==''?n:Number(x.defaultValue)))}
+function calc(){
+ $('perizia').disabled=$('energy').value==='yes'; $('rendita').disabled=$('seller').value==='vat'; $('subtax').disabled=$('prima').value==='no';
+ const price=val('price'), valuation=val('valuation'), ltv=Math.min(val('ltv'),95)/100, approval=val('approval');
+ const base=Math.min(price,valuation), mortgage=Math.min(base*ltv,approval), equity=Math.max(0,price-mortgage), gap=Math.max(0,price-valuation);
+ const prima=$('prima').value==='yes', seller=$('seller').value, rendita=val('rendita');
+ let tax=0;
+ if(seller==='private'){
+   let cadastral=rendita*1.05*(prima?110:120);
+   let reg=Math.max(1000,cadastral*(prima?.02:.09));
+   tax=reg+100;
+ } else {
+   tax=price*(prima?.04:.10)+600;
+ }
+ const agency=price*(val('agency')/100)*1.22;
+ const notary=val('notary'), tech=val('technical'), proc=val('processing'), other=val('other');
+ const perizia=$('energy').value==='yes'?0:val('perizia');
+ const subtax=mortgage*(prima?val('subtax')/100:.02);
+ const totalCash=equity+tax+agency+notary+tech+proc+perizia+subtax+other;
+ const cash=val('cash'), remain=cash-totalCash;
+ const effectiveRate=Math.max(0,val('rate')-($('energy').value==='yes'?val('discount'):0));
+ $('effectiveRate').textContent=effectiveRate.toFixed(2)+'%';
+ const r=effectiveRate/100/12, n=Math.round(val('years'))*12;
+ const monthly = r>0 ? mortgage*r/(1-Math.pow(1+r,-n)) : mortgage/n;
+ $('base').textContent=eur(base); $('mortgage').textContent=eur(mortgage);
+ $('tPrice').textContent=eur(price); $('tVal').textContent=eur(valuation); $('gap').textContent=eur(gap); $('equity').textContent=eur(equity);
+ $('cEquity').textContent=eur(equity); $('cTax').textContent=eur(tax); $('cAgency').textContent=eur(agency); $('cNotary').textContent=eur(notary);
+ $('cTech').textContent=eur(tech); $('cProc').textContent=eur(proc); $('cPerizia').textContent=eur(perizia); $('cSub').textContent=eur(subtax); $('cOther').textContent=eur(other);
+ $('cTotal').textContent=eur(totalCash); $('cAvail').textContent=eur(cash); $('cRemain').textContent=eur(remain);
+ $('cRemain').className=remain>=0?'good':'bad';
+ $('monthly').textContent=eur(monthly)+'/mo'; $('summaryTotal').textContent=eur(totalCash); $('summaryRemain').textContent=eur(remain); $('summaryRemain').className='kpi '+(remain>=0?'good':'bad'); $('summaryMonthly').textContent=eur(monthly)+'/mo';
+ $('effLtv').textContent=price?((mortgage/price)*100).toFixed(1)+'%':'—';
+ $('cashRatio').textContent=price?((totalCash/price)*100).toFixed(1)+'%':'—';
+ $('allIn').textContent=eur(price+(totalCash-equity));
+ $('energyInfo').innerHTML=$('energy').value==='yes'
+  ? '<b>Qualifying energy estimate:</b> perizia €0. Standard TAN '+val('rate').toFixed(2)+'% − '+val('discount').toFixed(2)+' pp discount = '+effectiveRate.toFixed(2)+'% effective TAN (minimum 0%). Verify offer eligibility.'
+  : '<b>Non-qualifying / unknown energy scenario:</b> model includes the editable €'+val('perizia').toFixed(0)+' ING valuation fee and no energy-rate discount.';
+ $('valuationMessage').innerHTML=gap>0
+  ? '<b>Valuation shortfall:</b> the bank values the property '+eur(gap)+' below the agreed price. Because finance is based on the lower value, your own cash contribution rises to <b>'+eur(equity)+'</b>.'
+  : '<b>No valuation shortfall in this scenario.</b> Finance is still limited by your selected LTV and ING approval ceiling.';
+ let signal, text, cls;
+ if(remain<0){signal='RED — cash shortfall'; cls='bad'; text='This scenario exceeds the cash reserve entered. Reduce price, negotiate harder, increase available cash or change financing assumptions.'}
+ else if(remain<5000 || gap>10000){signal='AMBER — tight'; cls='warn'; text='Technically workable in the model, but the buffer is thin or valuation risk is material. Treat this property cautiously.'}
+ else {signal='GREEN — research further'; cls='good'; text='The model leaves a usable cash buffer. Next focus on valuation comparables, APE, condominium liabilities and legal/technical conformity.'}
+ $('signal').textContent=signal; $('signal').className='kpi '+cls; $('signalText').textContent=text;
+}
+function resetDefaults(){
+ const d={price:165000,valuation:165000,ltv:94,years:25,rate:3.5,discount:.2,approval:170000,cash:37000,rendita:700,agency:3,notary:2500,technical:800,other:1000,processing:950,perizia:300,subtax:.25};
+ Object.entries(d).forEach(([k,v])=>{$(k).value=v;$(k).setAttribute('aria-invalid','false')}); $('seller').value='private'; $('prima').value='yes'; $('energy').value='yes'; document.querySelectorAll('[type=checkbox]').forEach(x=>x.checked=false); $('validation').textContent='Example restored; checklist cleared.'; calc();
+}
+
+
+const help={"price": "The agreed purchase price, in euros. Enter the property price only, excluding fees. It sets your equity requirement, agency fee and VAT-sale tax base.", "valuation": "The bank’s independent valuation in euros. Until known, start with the price, then try €155,000 or lower. Financing uses the lower of price and valuation; a lower valuation increases your cash contribution.", "ltv": "Loan-to-value percentage. Enter the financing percentage confirmed by your broker (0–95 in this model). Applied to the lower of price and valuation, then capped by the approval amount. The input maximum is not a lending promise.", "years": "Repayment period in whole years (1–40). Enter the full amortisation term, not an initial fixed-rate period. A longer term reduces the illustrative monthly payment; future rate resets are not modelled.", "rate": "Standard nominal annual interest rate (TAN), before the energy discount. Enter 3.50 for 3.50%, not 0.035. The eligible discount is subtracted automatically; TAN excludes fees and is not TAEG.", "discount": "Energy benefit in percentage points. Enter 0.20 to change 3.50% to 3.30%. Applied only for B/A-or-better; the effective rate cannot be negative. Confirm eligibility and the actual discount with ING.", "approval": "Maximum loan amount from the income pre-approval, in euros. Enter the current documented ceiling. The mortgage cannot exceed this amount; pre-approval remains subject to property and final checks.", "cash": "Cash available for this purchase, in euros. Enter funds available for completion. The model subtracts equity and acquisition costs to show your remaining buffer.", "seller": "Select whether this transaction is VAT-exempt or subject to VAT; a company seller is not automatically VAT-subject. This switches between cadastral registration-tax and purchase-price VAT calculations. Ask your notary.", "prima": "Select Yes only to model eligibility for prima-casa relief; this selection does not establish eligibility. It changes purchase tax rates, cadastral multiplier and mortgage substitute tax. Verify your circumstances with the notary.", "rendita": "Cadastral income, not the advertised price. Enter the rendita catastale from property documents. It drives the private/VAT-exempt prezzo-valore tax estimate; it has no effect in a VAT sale.", "agency": "Commission percentage before VAT. Enter 3 for 3%. The model charges price × this percentage × 1.22. Verify the agent’s agreement, VAT and timing.", "notary": "Estimated all-inclusive notary professional fees and expenses in euros. Exclude purchase and mortgage taxes already counted separately. Added directly to cash required; request a written quote.", "technical": "Geometra/surveyor and technical due-diligence budget in euros, including applicable VAT. Added directly to cash required. Obtain a quote for conformity and other checks.", "other": "Other one-off costs or reserve in euros: moving, documents, insurance or renovation allowance. Added to cash required. Avoid duplicating costs entered elsewhere; ongoing ownership expenses are excluded.", "energy": "Choose B/A-or-better only for a qualifying APE/offer scenario. This applies the energy rate discount and sets perizia to zero. C–G/unknown applies standard TAN and your entered perizia fee.", "processing": "ING istruttoria (processing) fee in euros. Enter the fee in your offer; €950 is the original planning assumption. Added to acquisition cash required.", "perizia": "Bank valuation fee in euros if not waived. Enter the quoted fee (original assumption €300). Kept when switching energy scenarios but charged only for C–G/unknown.", "subtax": "Mortgage substitute tax percentage for the prima-casa scenario. Enter 0.25 for 0.25%. Applied to the mortgage; when prima casa is No the original model uses 2% instead. Confirm the rate with your notary.", "check0": "Mark this item only after you have checked the supporting documents or inspected the property: APE energy class stated and document available. This is a research reminder and does not change any calculation.", "check1": "Mark this item only after you have checked the supporting documents or inspected the property: Rendita catastale obtained. This is a research reminder and does not change any calculation.", "check2": "Mark this item only after you have checked the supporting documents or inspected the property: Exact m² and €/m² reasonable for micro-area. This is a research reminder and does not change any calculation.", "check3": "Mark this item only after you have checked the supporting documents or inspected the property: Condominium annual fees stated. This is a research reminder and does not change any calculation.", "check4": "Mark this item only after you have checked the supporting documents or inspected the property: Extraordinary works / debts checked. This is a research reminder and does not change any calculation.", "check5": "Mark this item only after you have checked the supporting documents or inspected the property: Urban + cadastral conformity confirmed. This is a research reminder and does not change any calculation.", "check6": "Mark this item only after you have checked the supporting documents or inspected the property: Lift / floor / garage / parking clear. This is a research reminder and does not change any calculation.", "check7": "Mark this item only after you have checked the supporting documents or inspected the property: Heating type + windows + roof/humidity checked. This is a research reminder and does not change any calculation.", "check8": "Mark this item only after you have checked the supporting documents or inspected the property: Property vacant/available at rogito. This is a research reminder and does not change any calculation.", "check9": "Mark this item only after you have checked the supporting documents or inspected the property: No auction / nuda proprietà / usufruct surprise. This is a research reminder and does not change any calculation."};
+const limits={price:[1,10000000],valuation:[0,10000000],ltv:[0,95],years:[1,40],rate:[0,30],discount:[0,30],approval:[0,10000000],cash:[0,10000000],rendita:[0,1000000],agency:[0,100],notary:[0,1000000],technical:[0,1000000],other:[0,10000000],processing:[0,1000000],perizia:[0,1000000],subtax:[0,100]};
+Object.entries(limits).forEach(([id,[min,max]])=>{const x=$(id); x.min=min;x.max=max;x.step=id==='years'?'1':'any';x.inputMode='decimal';
+ x.addEventListener('input',()=>{const n=Number(x.value); const bad=x.value.trim()===''||!Number.isFinite(n)||n<min||n>max||(id==='years'&&!Number.isInteger(n));x.setAttribute('aria-invalid',String(bad));if(bad){$('validation').textContent='Enter a value from '+min+' to '+max+' for '+document.querySelector('label[for="'+id+'"]').textContent+'. Results use a bounded value or the default until corrected.';}else{$('validation').textContent='';}calc();});
+ x.addEventListener('change',()=>{const old=x.value;let n=val(id);if(id==='years')n=Math.round(n);x.value=n;x.setAttribute('aria-invalid','false');if(String(n)!==old)$('validation').textContent='Input adjusted to '+n+' within the allowed range.';calc();});
+});
+document.querySelectorAll('select').forEach(x=>x.addEventListener('change',calc));
+let helpTrigger;
+document.querySelectorAll('[data-help]').forEach(b=>b.addEventListener('click',()=>{helpTrigger=b;const id=b.dataset.help;$('helpTitle').textContent=document.querySelector('label[for="'+id+'"]').textContent;$('helpText').textContent=help[id];$('helpDialog').showModal();}));
+$('closeHelp').addEventListener('click',()=>$('helpDialog').close());
+$('helpDialog').addEventListener('close',()=>helpTrigger?.focus());
+calc();
+</script>
+</body></html>
